@@ -7,6 +7,8 @@
 
 
 <script>
+  import { mapActions, mapGetters } from "vuex"
+
   export default {
     name: 'Counter',
       data() {
@@ -14,11 +16,17 @@
           count: 0
         }
       },
+      computed: {
+        ...mapGetters["count"]
+      },
       methods: {
+        ...mapActions["incrementCount"],
         increment() {
           this.count++;
+          console.log(mapGetters["count"]);
         }
       }
+      // Pour envoyer un "commit" au store : this.$store.commit('NOMDUCOMMIT', value)
   }
 </script>
 
