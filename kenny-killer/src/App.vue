@@ -1,16 +1,29 @@
 <template>
+
   <div id="app">
     <router-view/>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App'
-}
+    import Vue from 'vue'
+    import BootstrapVue from 'bootstrap-vue'
+    import Vuex from 'vuex'
+    //import { store } from '../store.js';
+    //Vue.use(BootstrapVue);
+    //import 'bootstrap/dist/css/bootstrap.css'
+    //import 'bootstrap-vue/dist/bootstrap-vue.css'
+
+    export default {
+        name: 'App'
+    }
 </script>
 
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
   body {
     background-image: url("./assets/South_park.png");
     background-size: cover;

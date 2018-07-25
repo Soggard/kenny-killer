@@ -1,11 +1,13 @@
 <template>
   <div class="hello">
     <counter></counter>
+    <shop></shop>
   </div>
 </template>
 
 <script>
   import Counter from './Counter'
+  import Shop from './Shop'
   export default {
     name: 'HelloWorld',
     data () {
@@ -14,7 +16,8 @@
       }
     },
     components: {
-        Counter
+        Counter,
+        Shop
     }
   }
 </script>
