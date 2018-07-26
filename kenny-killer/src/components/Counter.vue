@@ -24,11 +24,12 @@ export default {
       // Lorsqu'on clique sur Kenny
       this.$store.commit('ClickKenny')
       // Change temporairement l'image
-      document.getElementById('kennyAlive').style.display = 'none'
-      document.getElementById('kennyDead').style.display = 'initial'
+      this.$el.querySelector('#kennyAlive').style.display = 'none'
+      this.$el.querySelector('#kennyDead').style.display = 'initial'
+      const context = this
       setTimeout(function () {
-        document.getElementById('kennyAlive').style.display = 'initial'
-        document.getElementById('kennyDead').style.display = 'none'
+        context.$el.querySelector('#kennyAlive').style.display = 'initial'
+        context.$el.querySelector('#kennyDead').style.display = 'none'
       }, 150)
     },
     autoClick: function () {

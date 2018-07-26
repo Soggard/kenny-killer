@@ -77,6 +77,7 @@ export default {
         -webkit-animation: rotating 3s linear infinite;
         display: none;
         z-index: 0;
+        cursor: pointer;
     }
 
 </style>

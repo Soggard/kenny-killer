@@ -1,18 +1,18 @@
 import Vue from 'vue'
 import Stats from '@/components/Stats'
-import { shallowMount } from "@vue/test-utils"
+import Vuex from 'vuex'
+import { shallowMount, createLocalVue } from "@vue/test-utils"
+import store from '../../../src/store'
+
+const localVue = createLocalVue()
+
+localVue.use(Vuex)
 
 describe('KennyKiller.vue', () => {
   it('should render correct contents', () => {
-    const Constructor = Vue.extend(Stats);
-    const vm = new Constructor().$mount();
-    const msg = "0";
-    const wrapper = shallowMount(Stats, {
-      propsData: { msg }
-    });
-   // expect(vm.$el.querySelector('#kps').textContent).toEqual('0');
-   // expect(vm.$el.querySelector('#kpc').textContent).toEqual('1');
-
-    expect(wrapper.text()).toMatch(msg);
+    const wrapper = shallowMount(Stats, { store, localVue })
+    expect(wrapper.contains('div')).toBe(true)
+    expect(wrapper.contains('#kps')).toBe(true)
+    expect(wrapper.contains('#kpc')).toBe(true)
   })
 })
