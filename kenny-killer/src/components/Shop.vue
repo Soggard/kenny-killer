@@ -2,7 +2,7 @@
   <div class="shopping-area">
     <div class="groupContainer">
       <div class="saveButton">
-        <button @click="saveGame">Save game</button>
+        <button @click="saveGame" class="buyButton">Sauvegarder la partie</button>
       </div>
 
       <div class="itemContainer">

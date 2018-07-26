@@ -1,7 +1,7 @@
 <template>
     <div id="stats">
-        <p>Points par seconde : {{ killPerSecond }}</p>
-        <p>Points par clic : {{ killPerClick }}</p>
+        <p>Points par seconde : <span id="kps">{{ killPerSecond }}</span></p>
+        <p>Points par clic : <span id="kpc">{{ killPerClick }}</span></p>
 
     </div>
 </template>

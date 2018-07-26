@@ -26,7 +26,7 @@ export default {
       // Change temporairement l'image
       document.getElementById('kennyAlive').style.display = 'none'
       document.getElementById('kennyDead').style.display = 'initial'
-      setTimeout(function(){
+      setTimeout(function () {
         document.getElementById('kennyAlive').style.display = 'initial'
         document.getElementById('kennyDead').style.display = 'none'
       }, 150)
