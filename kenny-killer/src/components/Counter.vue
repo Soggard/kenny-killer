@@ -5,48 +5,42 @@
     </div>
 </template>
 
-
 <script>
-  import { mapActions, mapGetters, mapState } from "vuex";
-  //import App from './App'
-  //import { store } from '../store.js';
+// import { mapActions, mapGetters, mapState } from 'vuex'
 
-  export default {
-      name: 'Counter',
-      data() {
-        return {
-          interval:''
-        }
-      },
-      computed: {
-          //...mapGetters["count"],
-          totalCookies: function () {
-              return this.$store.state.countTotal;
-          }
-      },
-      methods: {
-        //...mapActions["incrementCount"],
-        increment() {
-          //this.count++;
-          this.$store.commit('ClickKenny');
-          //console.log(this.$store.);
-        },
-        autoClick: function(){
-            this.interval = setInterval(() => {
-                this.$store.commit('AutoKill');
-                console.log('tick');
-                console.log(this.$store.state.killPerSecond);
-            }, 1000);
-        }
-      },
-      mounted : function(){
-          this.autoClick();
-      },
-      beforeDestroy () {
-          clearInterval(this.interval)
-      },
-      // Pour envoyer un "commit" au store : this.$store.commit('NOMDUCOMMIT', value)
+export default {
+  name: 'Counter',
+  data () {
+    return {
+      interval: ''
+    }
+  },
+  computed: {
+    // ...mapGetters["count"],
+    totalCookies: function () {
+      return this.$store.state.countTotal
+    }
+  },
+  methods: {
+    increment () {
+      this.$store.commit('ClickKenny')
+    },
+    autoClick: function () {
+      this.interval = setInterval(() => {
+        this.$store.commit('AutoKill')
+        console.log('tick')
+        console.log(this.$store.state.killPerSecond)
+      }, 1000)
+    }
+  },
+  mounted: function () {
+    this.autoClick()
+  },
+  beforeDestroy () {
+    clearInterval(this.interval)
   }
+  // Pour envoyer un "commit" au store : this.$store.commit('NOMDUCOMMIT', value)
+}
 </script>
 
 <style>

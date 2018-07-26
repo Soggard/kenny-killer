@@ -6,17 +6,17 @@
 </template>
 
 <script>
-    import Vue from 'vue'
-    import BootstrapVue from 'bootstrap-vue'
-    import Vuex from 'vuex'
-    //import { store } from '../store.js';
-    //Vue.use(BootstrapVue);
-    //import 'bootstrap/dist/css/bootstrap.css'
-    //import 'bootstrap-vue/dist/bootstrap-vue.css'
+import Vue from 'vue'
+import BootstrapVue from 'bootstrap-vue'
+// import Vuex from 'vuex'
+// import { store } from '../store.js';
+Vue.use(BootstrapVue)
+// import 'bootstrap/dist/css/bootstrap.css'
+// import 'bootstrap-vue/dist/bootstrap-vue.css'
 
-    export default {
-        name: 'App'
-    }
+export default {
+  name: 'App'
+}
 </script>
 
 <style>
