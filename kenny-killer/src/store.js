@@ -25,6 +25,9 @@ export default new Vuex.Store({
     SpendKills: function (state, value) {
       state.countTotal -= value
     },
+    GrenadeExplosion: function (state, value) {
+      state.countTotal += state.killPerClick * 240
+    },
     LoadGame: function (state, data) {
       state.countTotal = data['countTotal']
       state.killPerClick = data['killPerClick']

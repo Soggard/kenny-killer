@@ -1,29 +1,33 @@
 <template>
-  <div class="hello">
-    <counter></counter>
+  <div class="main">
+    <stats></stats>
     <shop></shop>
+    <lucky-grenade></lucky-grenade>
+    <counter></counter>
   </div>
 </template>
 
 <script>
 import Counter from './Counter'
 import Shop from './Shop'
+import Stats from './Stats'
+import LuckyGrenade from './LuckyGrenade'
 
 export default {
-  name: 'HelloWorld',
+  name: 'KennyKiller',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
     }
   },
   components: {
     Counter,
-    Shop
+    Shop,
+    Stats,
+    LuckyGrenade
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   h1, h2 {
     font-weight: normal;
@@ -38,5 +42,8 @@ export default {
   }
   a {
     color: #42b983;
+  }
+  .main {
+    width: 75%;
   }
 </style>
