@@ -16,17 +16,15 @@ export default {
   },
   methods: {
     popGrenade () {
-      // La grenade apparaît à l'écran
+      // La grenade apparaît à une position aléatoire sur l'écran
       let grenade = document.getElementById('grenade')
       grenade.style.display = 'inline-block'
       let posx = (Math.random() * (window.innerWidth)).toFixed()
       let posy = (Math.random() * (window.innerHeight)).toFixed()
       grenade.style.top = posy + 'px'
       grenade.style.left = posx + 'px'
-      console.log(posx, posy)
       setTimeout(function () {
         grenade.style.display = 'none'
-        console.log('end of grenade')
       }, 8000)
     },
     grenadeTimer: function () {
