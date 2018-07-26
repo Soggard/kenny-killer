@@ -5,19 +5,19 @@
       <button @click="saveGame">Save game</button>
       <h3>Couteau</h3>
       <p>Un couteau permet de tuer 3 Kenny par clic. Coût :  100</p>
-      <button @click="buyWeapon('knife', 3)">Clyde ! J'vais te planter !</button>
+      <button @click="buyWeapon('knife', 3)" id="buy_button_knife">Clyde ! J'vais te planter !</button>
     </div>
 
     <div class="itemContainer">
       <h3>Fusil de chasse</h3>
       <p>Un couteau permet de tuer 4 Kenny par clic. Coût :  600</p>
-      <button @click="buyWeapon('huntingrifle', 4)">Oh la belle, dis !</button>
+      <button @click="buyWeapon('huntingrifle', 4)" id="buy_button_huntingrifle">Oh la belle, dis !</button>
     </div>
 
     <div class="itemContainer">
       <h3>Fusil d'assaut</h3>
       <p>Enchaînez 7 Kenny supplémentaires par clic. Coût :  2000</p>
-      <button @click="buyWeapon('assaultrifle', 7)">Ratatatatatatatata !</button>
+      <button @click="buyWeapon('assaultrifle', 7)" id="buy_button_assaultrifle">Ratatatatatatatata !</button>
     </div>
 
     <div class="itemContainer">
@@ -113,7 +113,7 @@ export default {
         this.$store.commit('SpendKills', this.prices[objet])
         this.$store.commit('UpgradeKps', value)
         console.log('Upgrade KPS : ' + this.$store.state.killPerSecond)
-        this.prices[objet] = Math.round(this.prices[objet] * 1.25)
+        this.prices[objet] = Math.round(this.prices[objet] * 1.4)
         console.log(value)
         console.log(objet)
         console.log(this.autoClickers[objet])
@@ -123,6 +123,7 @@ export default {
       if (this.prices[objet] <= this.$store.state.countTotal && !this.equipedItems[objet]) {
         this.$store.commit('SpendKills', this.prices[objet])
         this.$store.commit('UpgradeKpc', value)
+        this.equipedItems[objet] = true
       }
     },
     loadGame () {
@@ -140,9 +141,11 @@ export default {
           'killPerClick': parseInt(Vue.localStorage.get('killPerClick')),
           'killPerSecond': parseInt(Vue.localStorage.get('killPerSecond'))
         })
-        console.log('Executing order 66 :' + Vue.localStorage.get('countTotal'))
       }
-      console.log('Cookies :' + this.$store.state.countTotal)
+      // Cache les boutons d'achat des objets déjà achetés
+        if (this.equipedItems[object]) {
+        }
+      }
     },
     saveGame () {
       console.log('Saving game : ' + JSON.stringify(this.prices))
