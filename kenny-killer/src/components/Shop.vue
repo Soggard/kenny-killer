@@ -160,7 +160,6 @@ export default {
     buy (objet, value) {
       if (this.prices[objet] <= this.$store.state.countTotal) {
         // Achat d'un autoclicker
-        this.equipedItems[objet] = true
         this.autoClickers[objet]++
         this.$store.commit('SpendKills', this.prices[objet])
         this.$store.commit('UpgradeKps', value)
@@ -178,8 +177,6 @@ export default {
       }
     },
     loadGame () {
-      console.log('Loading saved game')
-
       // Charge les données du shop
       if (Vue.localStorage.get('autoClickers') !== null) this.autoClickers = JSON.parse(Vue.localStorage.get('autoClickers'))
       if (Vue.localStorage.get('prices') !== null) this.prices = JSON.parse(Vue.localStorage.get('prices'))

@@ -48,6 +48,7 @@ La partie est sauvegardée automatiquement toutes les 30 secondes.
 
 Les Kills per click (KPC) et Kills per second (KPS) sont affichés en haut à gauche de l'écran.
 
+Une grenade a 80% de chance d'apparaître quelque part sur l'écran. Cliquer dessus éliminera KPS * 240 Kenny.
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).

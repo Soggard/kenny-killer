@@ -1,8 +1,9 @@
 <template>
   <div class="main">
     <stats></stats>
-    <counter></counter>
     <shop></shop>
+    <lucky-grenade></lucky-grenade>
+    <counter></counter>
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import Counter from './Counter'
 import Shop from './Shop'
 import Stats from './Stats'
+import LuckyGrenade from './LuckyGrenade'
 
 export default {
   name: 'KennyKiller',
@@ -20,7 +22,8 @@ export default {
   components: {
     Counter,
     Shop,
-    Stats
+    Stats,
+    LuckyGrenade
   }
 }
 </script>
