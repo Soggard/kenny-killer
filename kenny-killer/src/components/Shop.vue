@@ -124,6 +124,7 @@ export default {
         this.$store.commit('SpendKills', this.prices[objet])
         this.$store.commit('UpgradeKpc', value)
         this.equipedItems[objet] = true
+        document.getElementById('buy_button_' + objet).style.display = 'none'
       }
     },
     loadGame () {
@@ -143,7 +144,9 @@ export default {
         })
       }
       // Cache les boutons d'achat des objets déjà achetés
+      for (var object in this.equipedItems) {
         if (this.equipedItems[object]) {
+          document.getElementById('buy_button_' + object).style.display = 'none'
         }
       }
     },
