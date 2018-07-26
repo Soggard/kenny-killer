@@ -1,7 +1,8 @@
 <template>
     <div class="counter-zone">
         <h1 class="count">{{ totalCookies }}</h1> <br>
-        <img src="../assets/Kenny.png" alt="kenny" @click="increment">
+        <img src="../assets/KennyAlive.png" alt="kenny" id="kennyAlive" @click="increment">
+        <img src="../assets/KennyDead.png" alt="kenny" id="kennyDead" @click="increment">
     </div>
 </template>
 
@@ -24,6 +25,13 @@ export default {
   methods: {
     increment () {
       this.$store.commit('ClickKenny')
+      // Change the image
+      document.getElementById('kennyAlive').style.display = 'none'
+      document.getElementById('kennyDead').style.display = 'initial'
+      setTimeout(function(){
+        document.getElementById('kennyAlive').style.display = 'initial'
+        document.getElementById('kennyDead').style.display = 'none'
+      }, 150)
     },
     autoClick: function () {
       this.interval = setInterval(() => {
@@ -51,5 +59,8 @@ export default {
         width:100%;
         height:100%;
         justify-content: center;
+    }
+    #kennyDead {
+        display: none;
     }
 </style>
