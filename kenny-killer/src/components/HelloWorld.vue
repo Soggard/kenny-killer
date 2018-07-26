@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="main">
     <counter></counter>
     <shop></shop>
   </div>
@@ -38,5 +38,8 @@ export default {
   }
   a {
     color: #42b983;
+  }
+  .main {
+    width: 75%;
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="counter-zone">
         <h1 class="count">{{ totalCookies }}</h1> <br>
         <img src="../assets/Kenny.png" alt="kenny" @click="increment">
     </div>
@@ -46,5 +46,10 @@ export default {
 <style>
     .count {
         color: darkred;
+    }
+    .counter-zone {
+        width:100%;
+        height:100%;
+        justify-content: center;
     }
 </style>

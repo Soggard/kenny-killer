@@ -1,53 +1,55 @@
 <template>
   <div class="shopping-area">
+    <div class="groupContainer">
 
-    <div class="itemContainer">
-      <button @click="saveGame">Save game</button>
-      <h3>Couteau</h3>
-      <p>Un couteau permet de tuer 3 Kenny par clic. Coût :  100</p>
-      <button @click="buyWeapon('knife', 3)" id="buy_button_knife">Clyde ! J'vais te planter !</button>
-    </div>
+      <div class="itemContainer">
+        <button @click="saveGame">Save game</button>
+        <h3>Couteau</h3>
+        <p>Un couteau permet de tuer 3 Kenny par clic. Coût :  100</p>
+        <button @click="buyWeapon('knife', 3)" id="buy_button_knife">Clyde ! J'vais te planter !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Fusil de chasse</h3>
-      <p>Un couteau permet de tuer 4 Kenny par clic. Coût :  600</p>
-      <button @click="buyWeapon('huntingrifle', 4)" id="buy_button_huntingrifle">Oh la belle, dis !</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Fusil de chasse</h3>
+        <p>Un couteau permet de tuer 4 Kenny par clic. Coût :  600</p>
+        <button @click="buyWeapon('huntingrifle', 4)" id="buy_button_huntingrifle">Oh la belle, dis !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Fusil d'assaut</h3>
-      <p>Enchaînez 7 Kenny supplémentaires par clic. Coût :  2000</p>
-      <button @click="buyWeapon('assaultrifle', 7)" id="buy_button_assaultrifle">Ratatatatatatatata !</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Fusil d'assaut</h3>
+        <p>Enchaînez 7 Kenny supplémentaires par clic. Coût :  2000</p>
+        <button @click="buyWeapon('assaultrifle', 7)" id="buy_button_assaultrifle">Ratatatatatatatata !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Les copains ({{ autoClickers['nbFriends'] }})</h3>
-      <p>Un copain tue un Kenny par seconde. Coût :  ({{ prices['nbFriends'] }})</p>
-      <button @click="buy('nbFriends', 1)">Ramenez-vous, les gars !</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Les copains ({{ autoClickers['nbFriends'] }})</h3>
+        <p>Un copain tue un Kenny par seconde. Coût :  ({{ prices['nbFriends'] }})</p>
+        <button @click="buy('nbFriends', 1)">Ramenez-vous, les gars !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Caitlyn Jenner ({{ autoClickers['nbCaitlyn'] }})</h3>
-      <p>Caityn écrase 5 Kenny par seconde. Coût :  ({{ prices['nbCaitlyn'] }})</p>
-      <button @click="buy('nbCaitlyn', 5)">Buckle up buckaroo !</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Caitlyn Jenner ({{ autoClickers['nbCaitlyn'] }})</h3>
+        <p>Caityn écrase 5 Kenny par seconde. Coût :  ({{ prices['nbCaitlyn'] }})</p>
+        <button @click="buy('nbCaitlyn', 5)">Buckle up buckaroo !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Jimbo et Ned ({{ autoClickers['nbHunters'] }})</h3>
-      <p>20 Kenny par seconde foncent droit sur eux. Coût :  ({{ prices['nbHunters'] }})</p>
-      <button @click="buy('nbHunters', 20)">Oh mon Dieu, ils foncent droit sur nous !</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Jimbo et Ned ({{ autoClickers['nbHunters'] }})</h3>
+        <p>20 Kenny par seconde foncent droit sur eux. Coût :  ({{ prices['nbHunters'] }})</p>
+        <button @click="buy('nbHunters', 20)">Oh mon Dieu, ils foncent droit sur nous !</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Le Coon ({{ autoClickers['nbCoon'] }})</h3>
-      <p>Le Coon élimine 50 Kenny par secondes. Coût :  ({{ prices['nbCoon'] }})</p>
-      <button @click="buy('nbCoon', 50)">Someone called the Coon ?</button>
-    </div>
+      <div class="itemContainer">
+        <h3>Le Coon ({{ autoClickers['nbCoon'] }})</h3>
+        <p>Le Coon élimine 50 Kenny par secondes. Coût :  ({{ prices['nbCoon'] }})</p>
+        <button @click="buy('nbCoon', 50)">Someone called the Coon ?</button>
+      </div>
 
-    <div class="itemContainer">
-      <h3>Explosion nucléaire ({{ autoClickers['nbNuke'] }})</h3>
-      <p>Monsieur le Président, ce bouton rouge peut éliminer 200 Kennys par secondes. Coût :  ({{ prices['nbNuke'] }})</p>
-      <button @click="buy('nbNuke', 200)">Nuke 'em all.</button>
+      <div class="itemContainer">
+        <h3>Explosion nucléaire ({{ autoClickers['nbNuke'] }})</h3>
+        <p>Monsieur le Président, ce bouton rouge peut éliminer 200 Kennys par secondes. Coût :  ({{ prices['nbNuke'] }})</p>
+        <button @click="buy('nbNuke', 200)">Nuke 'em all.</button>
+      </div>
     </div>
   </div>
 </template>
@@ -173,19 +175,20 @@ export default {
 <style>
   .shopping-area {
     position: absolute;
-    width: 300px;
+    width: 25%;
     height: 100%;
     display: flex;
     flex-direction: column;
     right:0;
     top:0;
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .itemContainer {
     background: wheat;
-    width: 100%;
+    max-width: 100%;
     height: 100px;
-    padding: 5px 0;
+    padding: 5px 10px;
   }
 </style>

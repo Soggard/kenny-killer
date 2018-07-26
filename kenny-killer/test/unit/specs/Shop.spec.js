@@ -5,7 +5,7 @@ describe('Shop.vue', () => {
   it('should render correct contents', () => {
     const Constructor = Vue.extend(Shop);
     const vm = new Constructor().$mount();
-    // expect(vm.$el.querySelector('.hello h1').textContent)
+    // expect(vm.$el.querySelector('.main h1').textContent)
     //  .toEqual('0')
   })
 })
