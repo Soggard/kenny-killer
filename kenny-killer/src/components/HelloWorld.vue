@@ -6,20 +6,21 @@
 </template>
 
 <script>
-  import Counter from './Counter'
-  import Shop from './Shop'
-  export default {
-    name: 'HelloWorld',
-    data () {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
-    },
-    components: {
-        Counter,
-        Shop
+import Counter from './Counter'
+import Shop from './Shop'
+
+export default {
+  name: 'HelloWorld',
+  data () {
+    return {
+      msg: 'Welcome to Your Vue.js App'
     }
+  },
+  components: {
+    Counter,
+    Shop
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
