@@ -10,12 +10,8 @@ localVue.use(Vuex)
 
 describe('Counter.vue', () => {
   it('should render correct contents', () => {
-    //const Constructor = Vue.extend(Counter)
-    //const vm = new Constructor().$mount()
     const wrapper = shallowMount(Counter, { store, localVue })
     const button = wrapper.find('h1 .count')
-    // expect(button.textContent).toEqual('0')
-
     wrapper.find('img').trigger('click')
     expect(wrapper.contains('img')).toBe(true)
   })
